@@ -27,6 +27,10 @@ mongoose
   .then(() => console.log("✅ Connexion à MongoDB réussie !"))
   .catch((err) => console.error("❌ Erreur de connexion à MongoDB:", err));
 
+  // --- Servir les fichiers statiques du dossier 'public' ---
+app.use(express.static('public'));
+
+
 // --- Route de Ping (Health Check) ---
 app.get("/ping", (req, res) => {
   console.log("🏓 Ping received!");
